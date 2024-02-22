@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#Add username and set a password for the users 
+for (i=0; i<=5; i++ ))
+do
+  
+  #Set a password for each user 
+  passwrd="usr$i-1234
+  
+  # Add user
+  useradd "user$i"
+  
+  #Check if the user has been added
+  if [ $? -eq 0 ]; then
+    echo "usersi has been successfully added"
+  else
+    echo "Failed to add user$i"
+  fi
+  
+  # Assign pasword to user
+  echo "user$i:$(openssl passwd -1 "$passwd")" | chpasswd
+  
+  #Check if the password has been assigned
+  if [ $? -eq 0 ]; then
+    echo "user$i: Password successfully Assigned"
+  else
+    echo "Failed to add Password"
+  fi
+
+done

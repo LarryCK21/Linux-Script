@@ -26,5 +26,9 @@ do
   else
     echo "Failed to add Password"
   fi
+  #Set the user to change their password at the first login
+  chage -d 0 "larryck$i"
+  #Set the user account to be expired at dec 14th,2024
+  chage -E 2024-12-14 "larryck$i"
 
 done

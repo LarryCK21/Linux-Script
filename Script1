@@ -5,7 +5,7 @@ for (i=0; i<=5; i++ ))
 do
   
   #Set a password for each user 
-  passwrd="usr$i-1234
+  passwrd="usr$i-1234"
   
   # Add user
   useradd "user$i"
